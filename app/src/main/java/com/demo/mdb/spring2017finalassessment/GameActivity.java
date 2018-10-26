@@ -27,13 +27,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     Chronometer timer;
     EditText typedEditText;
 
+    public static FirebaseAuth mAuth;
     String phrase;
     String[] splitPhrase;
     boolean gameStarted = false;
     String typedString;
 
     FirebaseDatabase firebaseDatabase;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,8 +103,17 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
          * that game to our user's node? We can't generate a random key, because we want it to go
          * to the same node every time for a given user.
          */
+
         typedEditText.setEnabled(false);
         doneImageView.setClickable(false);
+
+        DatabaseReference gameRef = FirebaseDatabase.getInstance().getReference("/games");
+        DatabaseReference myUserRef = FirebaseDatabase.getInstance().getReference("/users").child(mAuth.getCurrentUser().getUid());
+
+        final String gamekey = gameRef.push().getKey();
+        Game game = new Game(phrase, typedString, accuracyPercentage, wpm);
+        gameRef.child(gamekey).setValue(game);
+        myUserRef.child(gamekey).setValue(gamekey);
     }
 
     private int getAccuracyPercentage() {

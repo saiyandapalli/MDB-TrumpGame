@@ -154,6 +154,17 @@ public class TabbedActivity extends AppCompatActivity {
             /* TODO Part 3
              * Set the first screen to the play fragment, and the second to the scores fragment
              */
+            if (position % 2 == 0){
+                PlayFragment fragment = new PlayFragment();
+                Bundle args = new Bundle();
+                fragment.setArguments(args);
+                return fragment;
+            } else {
+                ScoresFragment fragment = new ScoresFragment();
+                Bundle args = new Bundle();
+                fragment.setArguments(args);
+                return fragment;
+            }
         }
 
         @Override
