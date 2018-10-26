@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "131251903002",
+    "firebase_url": "https://mdbfinal-b396a.firebaseio.com",
+    "project_id": "mdbfinal-b396a",
+    "storage_bucket": "mdbfinal-b396a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131251903002:android:3c20e3d15195baf8",
+        "android_client_info": {
+          "package_name": "com.demo.mdb.spring2017finalassessment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "131251903002-bc0foqnpsigrkbuco6koialuib7bidli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnUV369EHMBzAr5k33VszCF7ayhij80lw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
